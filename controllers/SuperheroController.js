@@ -1,4 +1,5 @@
 const {Superhero} = require('../models')
+const {Superpower} = require('../models')
 
 module.exports.createSuperhero = async (req, res, next)=>{
     try {
@@ -48,6 +49,17 @@ module.exports.updateOneByPk = async (req, res, next) => {
         console.log(superheroInstance)
         const updatedSuperhero = await superheroInstance.update(body)
         return res.status(200).send(updatedSuperhero)
+    } catch (error) {
+        next(error)
+    }
+}
+
+module.exports.addSuperpowerToSuperhero = async (req, res, next) => {
+    try {
+        const {params: {superpowerId}, superheroInstance} = req
+        const superpowerInstance = await Superpower.findByPk(superpowerId)
+        const superheroWithSuperpower = await superheroInstance.addSuperpower(superpowerInstance)
+        return res.status(201).send(superheroWithSuperpower)
     } catch (error) {
         next(error)
     }

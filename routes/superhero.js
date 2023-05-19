@@ -10,5 +10,6 @@ superheroRouter.get('/:superheroId',superheroInstance,SuperheroController.findOn
 superheroRouter.get('/',pagination, SuperheroController.getAll)
 superheroRouter.delete('/:superheroId', superheroInstance, SuperheroController.deleteOneByPk)
 superheroRouter.put('/:superheroId', superheroInstance, SuperheroController.updateOneByPk)
+superheroRouter.put('/:superheroId/:superpowerId', superheroInstance, SuperheroController.addSuperpowerToSuperhero)
 
 module.exports = superheroRouter
