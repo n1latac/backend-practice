@@ -3,6 +3,7 @@ const SuperheroController = require('../controllers/SuperheroController')
 const {superheroInstance} = require('../midllewares/user.mv')
 const {pagination} = require('../midllewares/pagination')
 
+
 const superheroRouter = Router()
 
 superheroRouter.post('/', SuperheroController.createSuperhero)

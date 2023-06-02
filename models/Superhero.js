@@ -38,10 +38,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       unique: true
     },
-    imagePath:{
-      field: 'image_path',
-      type: DataTypes.TEXT
-    }
+    // imagePath:{
+    //   field: 'image_path',
+    //   type: DataTypes.TEXT
+    // }
   }, {
     sequelize,
     modelName: 'Superhero',
